@@ -1,0 +1,40 @@
+#container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+#left {
+  display: flex;
+  flex-direction: column;
+}
+
+#right {
+  display: flex;
+  flex-direction: column;
+}
+
+.display {
+  margin: 10px 25px;
+}
+
+button {
+  margin: 10px 20px;
+  padding: 10px 10px;
+  
+  border: solid black 4px;
+}
+
+button:active {
+  opacity: 0.8;
+}
+
+#smeltingButton {
+  background-color: #e50;
+}
+
+#miningButton {
+  background-color: #888;
+}
