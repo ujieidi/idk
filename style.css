@@ -1,3 +1,20 @@
+body {
+  overflow: hidden;
+}
+
+button {
+  margin: 0.5em 1em;
+  padding: 0.8em 1.6em;
+  
+  font-size: clamp(0.9rem, 1.2vw, 1.5rem);
+  
+  border: 0.25em solid black;
+}
+
+button:active {
+  opacity: 0.8;
+}
+
 #container {
   display: flex;
   flex-direction: row;
@@ -20,21 +37,28 @@
   margin: 10px 25px;
 }
 
-button {
-  margin: 10px 20px;
-  padding: 10px 10px;
-  
-  border: solid black 4px;
-}
-
-button:active {
-  opacity: 0.8;
-}
-
 #smeltingButton {
   background-color: #e50;
 }
 
 #miningButton {
   background-color: #888;
+}
+
+#moneyContainer {
+  position: absolute;
+  left: 2vw;
+  bottom: 2dvh;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+#sellButton {
+  margin: 0;
+  background-color: #5d5;
+}
+
+#moneyDisplay {
+  color: #585;
 }
