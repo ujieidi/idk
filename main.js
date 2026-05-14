@@ -4,9 +4,9 @@ let stats = {
   money: 0,
 };
 
-const miningButton = document.getElementById("miningButton");
-const smeltingButton = document.getElementById("smeltingButton");
-const sellButton = document.getElementById("sellButton")
+const miningButton = document.getElementById("mineCopper");
+const smeltingButton = document.getElementById("smeltCopper");
+const sellButton = document.getElementById("sellCopper")
 
 const oreCount = document.getElementById("ore-count");
 const barCount = document.getElementById("bar-count");
@@ -47,7 +47,7 @@ function sell(){
   
 miningButton.addEventListener("click", mineCopper);
 smeltingButton.addEventListener("click", smeltCopper);
-sellButton.addEventListener("click", sell  )
+sellButton.addEventListener("click", sell)
 
 
 //i will not be using abbreviation mostly since it may confuse myself

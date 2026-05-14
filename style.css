@@ -1,64 +1,72 @@
-body {
-  overflow: hidden;
+html, body {
+  margin: 0;
+  padding: 0;
+  
+  font-size: clamp(0.4rem, 1.3vw, 1.5rem);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+#actionContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  
+  position: fixed;
+  bottom: 0;
+  
+  height: 30dvh;
+  width: 100dvw;
+
+  background-color: #666;
+  padding: 1rem;
+  border: clamp(0.4rem, 1.2vw, 1rem) solid #555;
+  box-sizing: border-box;
+}
+
+.actionContainer-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.actionContainer-items button {
+  border: 0.3em solid black;
+  box-sizing: border-box;
+  
+  flex: 1;
 }
 
 button {
-  margin: 0.5em 1em;
-  padding: 0.8em 1.6em;
-  
-  font-size: clamp(0.9rem, 1.2vw, 1.5rem);
-  
-  border: 0.25em solid black;
+  font: inherit;
 }
 
 button:active {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
-#container {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-}
-
-#left {
+#statsContainer {
   display: flex;
   flex-direction: column;
-}
-
-#right {
-  display: flex;
-  flex-direction: column;
-}
-
-.display {
-  margin: 10px 25px;
-}
-
-#smeltingButton {
-  background-color: #e50;
-}
-
-#miningButton {
-  background-color: #888;
-}
-
-#moneyContainer {
-  position: absolute;
-  left: 2vw;
-  bottom: 2dvh;
   
-  display: flex;
-  flex-direction: column;
+  position: fixed;
+  bottom: 30dvh;
 }
 
-#sellButton {
-  margin: 0;
-  background-color: #5d5;
+#sellIron, #sellCopper {
+  background-color: #5e5;
 }
 
 #moneyDisplay {
-  color: #585;
+  color: #3a3;
+}
+
+#smeltCopper {
+  background: #e70;
+}
+
+#mineCopper {
+  background: #aab;
 }

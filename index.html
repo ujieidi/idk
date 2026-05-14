@@ -16,21 +16,22 @@
 
 <body>
   
-  <div id="container">
-    <div id="left">
-      <h4 class="display">COPPER BAR: <span id="bar-count">0</span></h4>
-      <button id="smeltingButton">SMELT COPPER ORE</button>
+  <div id="actionContainer">
+    <div class="actionContainer-items">
+      <button id="smeltCopper">SMELT COPPER ORE</button>
+      <button id="mineCopper">MINE COPPER ORE</button>
     </div>
     
-    <div id="right">
-     <h4 class="display">COPPER ORE: <span id="ore-count">0</span></h4>
-     <button id="miningButton">MINE COPPER ORE</button>
+    <div class="actionContainer-items">
+      <!--<button id="sellIron">next time</button>-->
+      <button id="sellCopper">Sell Copper Bar</button>
     </div>
   </div>
   
-  <div id="moneyContainer">
-    <h2 id="moneyDisplay">MONEY: $<span id="money-count">0</span></h2>
-    <button id="sellButton">Sell Copper Bar</button>
+  <div id="statsContainer">
+    <h3 class="display">COPPER ORE: <span id="ore-count">0</span></h3>
+    <h3 class="display">COPPER BAR: <span id="bar-count">0</span></h3>
+    <h1 id="moneyDisplay">MONEY: $<span id="money-count">0</span></h1>
   </div>
   
   <!-- Project -->
