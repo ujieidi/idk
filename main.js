@@ -4,18 +4,28 @@ let stats = {
   money: 0,
 };
 
-const miningButton = document.getElementById("mineCopper");
-const smeltingButton = document.getElementById("smeltCopper");
+let copperIsSmelting = false;
+let isMiningCopper = false;
+
+const mineCopperButton = document.getElementById("mineCopper");
+const smeltCopperButton = document.getElementById("smeltCopper");
 const sellButton = document.getElementById("sellCopper")
 
 const oreCount = document.getElementById("ore-count");
 const barCount = document.getElementById("bar-count");
 const moneyCount = document.getElementById("money-count")
 
+function updateButtons(){
+  smeltCopperButton.disabled = copperIsSmelting;
+  mineCopperButton.disabled = isMiningCopper;
+}
+
 function updateDisplay(){
   oreCount.textContent = stats.copperOre;
   barCount.textContent = stats.copperBar;
   moneyCount.textContent = stats.money;
+  
+  updateButtons();
 };
 
 function mineCopper(){
@@ -24,12 +34,21 @@ function mineCopper(){
 };
 
 function smeltCopper(){
-  if(stats.copperOre >= 1){
+  if(stats.copperOre >= 1 && !copperIsSmelting){
+    copperIsSmelting = true;
+    smeltCopperButton.textContent = "SMELTING...";
     stats.copperOre--;
-    stats.copperBar++;
+    updateDisplay();
+    
+    setTimeout(() => {
+      copperIsSmelting = false;
+      smeltCopperButton.textContent = "SMELT COPPER ORE";
+      stats.copperBar++;
+      updateDisplay();
+    }, 1000);
   }
   else{
-    console.log("not enough copperOre")
+    console.log("not enough copperOre or smelting already")
   }
   updateDisplay();
 };
@@ -45,9 +64,6 @@ function sell(){
   updateDisplay();
 };
   
-miningButton.addEventListener("click", mineCopper);
-smeltingButton.addEventListener("click", smeltCopper);
+mineCopperButton.addEventListener("click", mineCopper);
+smeltCopperButton.addEventListener("click", smeltCopper);
 sellButton.addEventListener("click", sell)
-
-
-//i will not be using abbreviation mostly since it may confuse myself
